@@ -314,9 +314,7 @@ select * from cte where gender="F" order by hireyear;
 
 #Gender bifurcation % across  all the coffee shops#
  
-
--- Query to calculate gender bifurcation percentage for each shop#
-with cte as (SELECT
+	with cte as (SELECT
     `coffeeshop_id`,
     gender,
     round((COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY `coffeeshop_id`)),0) AS genderpercentage
