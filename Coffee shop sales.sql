@@ -324,6 +324,15 @@ GROUP BY
     `coffeeshop_id`, gender)
     select s.`coffeeshop_name`, c.gender,c.genderpercentage from cte c join shops s on c.`coffeeshop_id`=s.`coffeeshop_id`;
 
+#Average salary per gender for all coffee shops#
+
+with cte as (sELECT 
+    round(AVG(salary),0) as avgsal, gender, `coffeeshop_id`
+FROM
+    employees
+GROUP BY gender , `coffeeshop_id`)
+select s.`coffeeshop_name`,c.gende
+
 
 
 
